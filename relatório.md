@@ -92,5 +92,5 @@ A atividade demonstrou, na prática, como os componentes de rede da AWS se integ
 O trabalho reforçou conceitos fundamentais de infraestrutura em nuvem como isolamento de rede (VPC), segmentação (sub-redes), roteamento e controle de acesso (Security Group), que são a base de qualquer arquitetura DevOps/Cloud moderna.
 
 ---
-
+## Antonio Harisson Alencar Ferreira
 *Capacita iRede · Nível Intermediário 
