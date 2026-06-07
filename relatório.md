@@ -30,7 +30,7 @@ https://github.com/harissonalen/PSC-ambiente-aws/blob/main/prints/criando%20VPC.
 A sub-rede é uma subdivisão do espaço de IP da VPC. Por ser pública, está associada a uma tabela de rotas que aponta para o Internet Gateway, permitindo comunicação com a internet. O CIDR `10.0.1.0/24` disponibiliza até 251 endereços utilizáveis. A opção de IP público automático foi ativada para que instâncias lançadas nela recebam automaticamente um endereço IP externo.
 
 
-![Sub-rede pública](prints/criando sub rede.gif)
+![Sub-rede pública](https://raw.githubusercontent.com/harissonalen/PSC-ambiente-aws/main/prints/criando%20sub%20rede.gif)
 
 ---
 
