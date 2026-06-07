@@ -19,7 +19,7 @@ Criar um ambiente de testes AWS, compreendendo, na prática, como os principais 
 
 A VPC é a rede privada virtual isolada onde todos os recursos do ambiente são criados. Ela define um espaço de endereços IP exclusivo, garantindo isolamento lógico entre os recursos da conta AWS. Nenhum tráfego entra ou sai da VPC sem autorização explícita. Funciona como o "datacenter virtual" que contém sub-redes, rotas e instâncias.
 
-<!-- prints/criando VPC.gif -->
+
 ![VPC criada](prints/01-vpc.png)
 
 ---
@@ -29,8 +29,8 @@ A VPC é a rede privada virtual isolada onde todos os recursos do ambiente são 
 
 A sub-rede é uma subdivisão do espaço de IP da VPC. Por ser pública, está associada a uma tabela de rotas que aponta para o Internet Gateway, permitindo comunicação com a internet. O CIDR `10.0.1.0/24` disponibiliza até 251 endereços utilizáveis. A opção de IP público automático foi ativada para que instâncias lançadas nela recebam automaticamente um endereço IP externo.
 
-<!-- prints/criando sub rede .gif -->
-![Sub-rede pública](prints/criando sub rede .gif)
+
+![Sub-rede pública](prints/criando sub rede.gif)
 
 ---
 
@@ -38,7 +38,7 @@ A sub-rede é uma subdivisão do espaço de IP da VPC. Por ser pública, está a
 
 O Internet Gateway é o componente que conecta a VPC à internet pública. Sem ele, os recursos dentro da VPC ficam completamente isolados, sem capacidade de enviar ou receber tráfego externo. Após criado, ele é anexado à VPC e referenciado pela tabela de rotas como destino do tráfego externo. Age como a "porta de entrada e saída" do ambiente de rede.
 
-<!-- prints/criando IGW .gif -->
+
 ![Internet Gateway](prints/criando IGW .gif)
 
 ---
@@ -47,7 +47,7 @@ O Internet Gateway é o componente que conecta a VPC à internet pública. Sem e
 
 A tabela de rotas define para onde o tráfego de rede deve ser encaminhado a partir da sub-rede. A rota `0.0.0.0/0 → IGW` instrui que qualquer destino externo seja enviado pelo Internet Gateway. Sem esta rota configurada e associada à sub-rede, mesmo com o IGW presente, o tráfego não chegaria à internet. A associação entre tabela e sub-rede é obrigatória.
 
-<!-- prints/criando tabela de rotas .gif -->
+
 ![Tabela de rotas](prints/criando tabela de rotas .gif)
 
 ---
@@ -57,7 +57,7 @@ A tabela de rotas define para onde o tráfego de rede deve ser encaminhado a par
 
 O Security Group funciona como um firewall virtual no nível da instância EC2. Ele controla quais portas e protocolos são permitidos, tanto para tráfego de entrada (inbound) quanto de saída (outbound). Foi liberada apenas a porta 22 (SSH) para o IP do próprio desenvolvedor, bloqueando qualquer outro acesso não autorizado. Isso segue o princípio do menor privilégio, essencial em ambientes de nuvem.
 
-<!-- Substitua pelo caminho real do seu print -->
+
 ![Security Group](prints/criando Grupo de seguranca .gif)
 
 ---
@@ -67,7 +67,7 @@ O Security Group funciona como um firewall virtual no nível da instância EC2. 
 
 A instância EC2 é o servidor virtual onde a aplicação roda. Foi lançada dentro da sub-rede pública criada, herdando automaticamente um IP público. A chave SSH (`.pem`) gerada no momento do lançamento é o único meio de autenticação na instância. Ela consolida todos os recursos criados, sendo o destino final de acesso do ambiente.
 
-<!-- Substitua pelo caminho real do seu print -->
+
 ![EC2 em execução](prints/criando instancia EC2.gif)
 
 ---
@@ -80,7 +80,7 @@ Comando utilizado para acessar a instância:
 ssh -i sua-chave.pem ec2-user@IP_PUBLICO
 ```
 
-<!-- Substitua pelo caminho real do seu GIF ou print -->
+
 ![Acesso SSH funcionando](prints/acesso a EC2.png)
 
 ---
