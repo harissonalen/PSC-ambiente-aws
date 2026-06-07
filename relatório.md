@@ -21,7 +21,7 @@ A VPC é a rede privada virtual isolada onde todos os recursos do ambiente são 
 
 
 ![VPC criada](prints/01-vpc.png)
-
+https://github.com/harissonalen/PSC-ambiente-aws/blob/main/prints/criando%20VPC.gif
 ---
 
 ### 📦 Sub-rede Pública
